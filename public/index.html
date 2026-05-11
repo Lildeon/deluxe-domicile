@@ -1,0 +1,1908 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deluxe Domicile Designs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: {
+                50: "#f0f3f9",
+                100: "#d9e1f0",
+                200: "#b3c3e1",
+                300: "#8da1d2",
+                400: "#677fc3",
+                500: "#4160b4",
+                600: "#1a3f7a",
+                700: "#152e5a",
+                800: "#0f1f3d",
+                900: "#0a1429",
+                950: "#050a15",
+              },
+              gold: {
+                50: "#fefcf3",
+                100: "#fdf6d8",
+                200: "#faebaf",
+                300: "#f7d97c",
+                400: "#f4c74a",
+                500: "#d4a012",
+                600: "#a67c0e",
+                700: "#7a5a0a",
+                800: "#4e3907",
+                900: "#231b03",
+              },
+            },
+            fontFamily: {
+              display: ["Playfair Display", "serif"],
+              body: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Inter", sans-serif;
+      }
+      .font-display {
+        font-family: "Playfair Display", serif;
+      }
+      .hero-gradient {
+        background: linear-gradient(
+          135deg,
+          #0a1429 0%,
+          #152e5a 40%,
+          #1a3f7a 100%
+        );
+      }
+      .gold-gradient {
+        background: linear-gradient(
+          135deg,
+          #d4a012 0%,
+          #f4c74a 50%,
+          #d4a012 100%
+        );
+      }
+      .card-shine {
+        position: relative;
+        overflow: hidden;
+      }
+      .card-shine::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+          45deg,
+          transparent 40%,
+          rgba(212, 160, 18, 0.03) 50%,
+          transparent 60%
+        );
+        transition: all 0.6s;
+        opacity: 0;
+      }
+      .card-shine:hover::before {
+        opacity: 1;
+        transform: translate(20%, 20%);
+      }
+      .stat-counter {
+        transition: all 0.3s ease;
+      }
+      .stat-counter:hover {
+        transform: translateY(-4px);
+      }
+      .testimonial-slide {
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .service-card:hover .service-icon {
+        transform: scale(1.1) rotate(5deg);
+      }
+      .service-icon {
+        transition: transform 0.3s ease;
+      }
+      .team-card:hover img {
+        transform: scale(1.05);
+      }
+      .team-card img {
+        transition: transform 0.5s ease;
+      }
+      .blog-card:hover img {
+        transform: scale(1.05);
+      }
+      .blog-card img {
+        transition: transform 0.5s ease;
+      }
+      input:focus,
+      textarea:focus,
+      select:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(212, 160, 18, 0.3);
+      }
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #d4a012;
+        transition: width 0.3s ease;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0a1429;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1a3f7a;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #d4a012;
+      }
+      .mobile-menu {
+        clip-path: circle(0% at calc(100% - 2rem) 2rem);
+        transition: clip-path 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .mobile-menu.open {
+        clip-path: circle(150% at calc(100% - 2rem) 2rem);
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      .float-animation {
+        animation: float 6s ease-in-out infinite;
+      }
+      @keyframes pulse-gold {
+        0%,
+        100% {
+          box-shadow: 0 0 0 0 rgba(212, 160, 18, 0.4);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(212, 160, 18, 0);
+        }
+      }
+      .pulse-gold {
+        animation: pulse-gold 2s infinite;
+      }
+    </style>
+  </head>
+  <body class="bg-navy-950 text-white">
+    <!-- Navigation -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <a href="#" class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 gold-gradient rounded-lg flex items-center justify-center"
+            >
+              <i data-lucide="triangle" class="w-5 h-5 text-navy-950"></i>
+            </div>
+            <span class="text-xl font-display font-bold text-white"
+              >Deluxe Domicile<span class="text-gold-500"> Designs</span></span
+            >
+          </a>
+          <div class="hidden lg:flex items-center gap-8">
+            <a
+              href="#"
+              class="nav-link text-sm font-medium text-gray-300 hover:text-white transition"
+              >Home</a
+            >
+            <a
+              href="#services"
+              class="nav-link text-sm font-medium text-gray-300 hover:text-white transition"
+              >Services</a
+            >
+            <a
+              href="#team"
+              class="nav-link text-sm font-medium text-gray-300 hover:text-white transition"
+              >Our Team</a
+            >
+            <a
+              href="#about"
+              class="nav-link text-sm font-medium text-gray-300 hover:text-white transition"
+              >About Us</a
+            >
+
+            <a
+              href="#booking"
+              class="px-6 py-2.5 bg-gold-500 text-navy-950 font-semibold text-sm rounded-lg hover:bg-gold-400 transition"
+              >Contact Us</a
+            >
+          </div>
+          <button id="menuBtn" class="lg:hidden text-white p-2">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="mobile-menu fixed inset-0 bg-navy-900/98 backdrop-blur-lg z-50 lg:hidden"
+      >
+        <div class="flex justify-end p-6">
+          <button id="closeMenu" class="text-white p-2">
+            <i data-lucide="x" class="w-6 h-6"></i>
+          </button>
+        </div>
+        <div class="flex flex-col items-center gap-6 pt-12">
+          <a
+            href="#"
+            class="mobile-link text-2xl font-display text-white hover:text-gold-500 transition"
+            >Home</a
+          >
+          <a
+            href="#services"
+            class="mobile-link text-2xl font-display text-white hover:text-gold-500 transition"
+            >Services</a
+          >
+          <a
+            href="#team"
+            class="mobile-link text-2xl font-display text-white hover:text-gold-500 transition"
+            >Our Team</a
+          >
+          <a
+            href="#about"
+            class="mobile-link text-2xl font-display text-white hover:text-gold-500 transition"
+            >About Us</a
+          >
+
+          <a
+            href="#booking"
+            class="mobile-link mt-4 px-8 py-3 bg-gold-500 text-navy-950 font-bold rounded-lg text-lg"
+            >Contact Us</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="hero-gradient min-h-screen flex items-center relative overflow-hidden"
+    >
+      <div class="absolute inset-0">
+        <div
+          class="absolute top-20 right-10 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl float-animation"
+        ></div>
+        <div
+          class="absolute bottom-20 left-10 w-80 h-80 bg-gold-500/5 rounded-full blur-3xl float-animation"
+          style="animation-delay: -3s"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-navy-600/10 rounded-full blur-3xl"
+        ></div>
+        <!-- Grid pattern -->
+        <div
+          class="absolute inset-0 opacity-[0.03]"
+          style="
+            background-image: radial-gradient(
+              circle,
+              #ffffff 1px,
+              transparent 1px
+            );
+            background-size: 40px 40px;
+          "
+        ></div>
+      </div>
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 relative z-10 w-full"
+      >
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="fade-in">
+            <div class="flex items-center gap-2 mb-6">
+              <div class="w-12 h-[2px] bg-gold-500"></div>
+              <span
+                class="text-gold-500 font-medium text-sm tracking-widest uppercase"
+                >Desigining your signature, Unleashing luxury</span
+              >
+            </div>
+            <h1
+              class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-bold leading-tight mb-6"
+            >
+              Transforming <span class="text-gold-500">Vision</span> Into
+              <span class="text-gold-500">Results</span>
+            </h1>
+            <p class="text-lg text-gray-400 leading-relaxed mb-10 max-w-xl">
+              Do you need any help concerning construction and Architecture?
+              Just Talk to US. We partner with ambitious organizations to
+              navigate complexity, accelerate growth, and build sustainable
+              competitive advantages through strategic excellence.
+            </p>
+            <div class="flex flex-wrap gap-4 mb-14">
+              <a
+                href="#booking"
+                class="px-8 py-4 bg-gold-500 text-navy-950 font-bold rounded-lg hover:bg-gold-400 transition text-base pulse-gold"
+              >
+                Schedule Free Consultation
+              </a>
+              <a
+                href="#cases"
+                class="px-8 py-4 border-2 border-white/20 text-white font-semibold rounded-lg hover:border-gold-500 hover:text-gold-500 transition text-base flex items-center gap-2"
+              >
+                <i data-lucide="play-circle" class="w-5 h-5"></i> View Our
+                Results
+              </a>
+            </div>
+            <!-- Trust Stats -->
+            <div class="grid grid-cols-3 gap-6 pt-8 border-t border-white/10">
+              <div class="stat-counter">
+                <div
+                  class="text-3xl sm:text-4xl font-display font-bold text-gold-500"
+                  data-count="500"
+                >
+                  500+
+                </div>
+                <div class="text-sm text-gray-400 mt-1">Clients Served</div>
+              </div>
+              <div class="stat-counter">
+                <div
+                  class="text-3xl sm:text-4xl font-display font-bold text-gold-500"
+                  data-count="98"
+                >
+                  98%
+                </div>
+                <div class="text-sm text-gray-400 mt-1">Success Rate</div>
+              </div>
+              <div class="stat-counter">
+                <div
+                  class="text-3xl sm:text-4xl font-display font-bold text-gold-500"
+                >
+                  GHC 2.4B
+                </div>
+                <div class="text-sm text-gray-400 mt-1">Value Created</div>
+              </div>
+            </div>
+          </div>
+          <div class="hidden lg:block fade-in" style="transition-delay: 0.2s">
+            <div class="relative">
+              <div
+                class="absolute -inset-4 bg-gradient-to-r from-gold-500/20 to-navy-600/20 rounded-2xl blur-2xl"
+              ></div>
+              <img
+                src="icon.jpeg"
+                alt="Business Consulting"
+                class="relative rounded-2xl w-full object-cover shadow-2xl"
+              />
+              <!-- Floating cards -->
+              <div
+                class="absolute -left-8 top-1/4 bg-navy-800/90 backdrop-blur-sm rounded-xl p-4 shadow-xl border border-white/10 float-animation"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center"
+                  >
+                    <i
+                      data-lucide="trending-up"
+                      class="w-5 h-5 text-green-400"
+                    ></i>
+                  </div>
+                  <div>
+                    <div class="text-xs text-gray-400">Revenue Growth</div>
+                    <div class="text-lg font-bold text-green-400">+340%</div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="absolute -right-4 bottom-1/4 bg-navy-800/90 backdrop-blur-sm rounded-xl p-4 shadow-xl border border-white/10 float-animation"
+                style="animation-delay: -2s"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 bg-gold-500/20 rounded-lg flex items-center justify-center"
+                  >
+                    <i data-lucide="award" class="w-5 h-5 text-gold-400"></i>
+                  </div>
+                  <div>
+                    <div class="text-xs text-gray-400">Industry Award</div>
+                    <div class="text-lg font-bold text-gold-400">#1 Firm</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Trust Badges -->
+        <div
+          class="mt-16 pt-10 border-t border-white/10 fade-in"
+          style="transition-delay: 0.4s"
+        >
+          <p class="text-center text-sm text-gray-500 mb-8">
+            TRUSTED BY INDUSTRY LEADERS
+          </p>
+          <div
+            class="flex flex-wrap justify-center items-center gap-8 sm:gap-12 opacity-50"
+          >
+            <span
+              class="text-2xl font-display font-bold text-gray-400 tracking-wider"
+              >FORTUNE</span
+            >
+            <span class="text-2xl font-bold text-gray-400 tracking-wider"
+              >TechCorp</span
+            >
+            <span
+              class="text-2xl font-display font-bold text-gray-400 tracking-wider"
+              >MERIDIAN</span
+            >
+            <span class="text-2xl font-bold text-gray-400 tracking-wider"
+              >NovaStar</span
+            >
+            <span
+              class="text-2xl font-display font-bold text-gray-400 tracking-wider"
+              >AXIOM</span
+            >
+            <span class="text-2xl font-bold text-gray-400 tracking-wider"
+              >GlobalFin</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-navy-900 relative">
+      <div
+        class="absolute inset-0 opacity-[0.02]"
+        style="
+          background-image: radial-gradient(
+            circle,
+            #ffffff 1px,
+            transparent 1px
+          );
+          background-size: 30px 30px;
+        "
+      ></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="text-center mb-16 fade-in">
+          <div class="flex items-center justify-center gap-2 mb-4">
+            <div class="w-8 h-[2px] bg-gold-500"></div>
+            <span
+              class="text-gold-500 font-medium text-sm tracking-widest uppercase"
+              >What We Offer</span
+            >
+            <div class="w-8 h-[2px] bg-gold-500"></div>
+          </div>
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-4"
+          >
+            Our Services
+          </h2>
+          <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+            Do you need any help concerning construction and Architecture? Just
+            Talk to US
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Service 1 -->
+          <div
+            class="service-card card-shine group bg-navy-800/50 border border-white/5 rounded-2xl p-8 hover:border-gold-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-gold-500/5 fade-in"
+          >
+            <div
+              class="service-icon w-14 h-14 bg-gold-500/10 rounded-xl flex items-center justify-center mb-6"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 64 64"
+                width="120"
+                height="120"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="10" y="10" width="44" height="44" rx="2" />
+                <path d="M18 42L30 30L38 38L46 22" />
+                <circle cx="30" cy="30" r="2" fill="currentColor" />
+                <circle cx="38" cy="38" r="2" fill="currentColor" />
+              </svg>
+            </div>
+            <h3
+              class="text-xl font-display font-bold mb-3 group-hover:text-gold-500 transition"
+            >
+              Schematic Design Development
+            </h3>
+            <p class="text-gray-400 leading-relaxed mb-4">
+              We transform ideas into clear and practical concepts through
+              detailed schematic design development. Our team carefully plans
+              layouts, spatial arrangements, and design solutions that align
+              with your vision, functionality, and project goals while ensuring
+              efficiency and sustainability from the very beginning.
+            </p>
+          </div>
+          <!-- Service 2 -->
+          <div
+            class="service-card card-shine group bg-navy-800/50 border border-white/5 rounded-2xl p-8 hover:border-gold-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-gold-500/5 fade-in"
+            style="transition-delay: 0.1s"
+          >
+            <div
+              class="service-icon w-14 h-14 bg-gold-500/10 rounded-xl flex items-center justify-center mb-6"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 64 64"
+                width="120"
+                height="120"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="16" y="10" width="32" height="44" rx="2" />
+                <path d="M24 20H40M24 28H40M24 36H34" />
+                <path d="M22 48L28 54L42 40" />
+              </svg>
+            </div>
+            <h3
+              class="text-xl font-display font-bold mb-3 group-hover:text-gold-500 transition"
+            >
+              Construction Administration
+            </h3>
+            <p class="text-gray-400 leading-relaxed mb-4">
+              Our construction administration services ensure that every stage
+              of the project is executed according to approved plans,
+              specifications, and quality standards. We coordinate with
+              contractors, monitor progress, manage documentation, and help
+              deliver projects successfully, on time, and within budget.
+            </p>
+          </div>
+          <!-- Service 3 -->
+          <div
+            class="service-card card-shine group bg-navy-800/50 border border-white/5 rounded-2xl p-8 hover:border-gold-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-gold-500/5 fade-in"
+            style="transition-delay: 0.2s"
+          >
+            <div
+              class="service-icon w-14 h-14 bg-gold-500/10 rounded-xl flex items-center justify-center mb-6"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 64 64"
+                width="120"
+                height="120"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="18" y="10" width="28" height="44" rx="2" />
+                <path d="M24 18H40M24 26H40M24 34H32" />
+                <path d="M40 42L46 48L56 34" />
+                <circle cx="28" cy="42" r="2" fill="currentColor" />
+              </svg>
+            </div>
+            <h3
+              class="text-xl font-display font-bold mb-3 group-hover:text-gold-500 transition"
+            >
+              Construction Estimation
+            </h3>
+            <p class="text-gray-400 leading-relaxed mb-4">
+              We provide accurate and reliable construction cost estimation
+              services to help clients plan effectively and make informed
+              financial decisions. Our detailed estimates cover materials,
+              labor, equipment, and project timelines to minimize risks and
+              control costs throughout the construction process.
+            </p>
+          </div>
+          <!-- Service 4 -->
+          <div
+            class="service-card card-shine group bg-navy-800/50 border border-white/5 rounded-2xl p-8 hover:border-gold-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-gold-500/5 fade-in"
+          >
+            <div
+              class="service-icon w-14 h-14 bg-gold-500/10 rounded-xl flex items-center justify-center mb-6"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 64 64"
+                width="120"
+                height="120"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 50L32 14L52 50Z" />
+                <path d="M22 34H42M18 42H46" />
+              </svg>
+            </div>
+            <h3
+              class="text-xl font-display font-bold mb-3 group-hover:text-gold-500 transition"
+            >
+              Structural Drawings
+            </h3>
+            <p class="text-gray-400 leading-relaxed mb-4">
+              Our structural drawing services provide detailed technical plans
+              that ensure the safety, stability, and durability of every
+              structure. We prepare precise structural layouts and reinforcement
+              details that comply with engineering standards and support
+              efficient construction execution.
+            </p>
+          </div>
+          <!-- Service 5 -->
+          <div
+            class="service-card card-shine group bg-navy-800/50 border border-white/5 rounded-2xl p-8 hover:border-gold-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-gold-500/5 fade-in"
+            style="transition-delay: 0.1s"
+          >
+            <div
+              class="service-icon w-14 h-14 bg-gold-500/10 rounded-xl flex items-center justify-center mb-6"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 64 64"
+                width="120"
+                height="120"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M10 30L32 12L54 30" />
+                <path d="M18 28V52H46V28" />
+                <rect x="26" y="36" width="12" height="16" />
+              </svg>
+            </div>
+            <h3
+              class="text-xl font-display font-bold mb-3 group-hover:text-gold-500 transition"
+            >
+              Architectural Designs
+            </h3>
+            <p class="text-gray-400 leading-relaxed mb-4">
+              We create innovative and functional architectural designs tailored
+              to meet the unique needs of our clients. From residential to
+              commercial projects, our designs combine creativity, aesthetics,
+              and practicality to deliver spaces that inspire and perform
+              exceptionally well.
+            </p>
+          </div>
+          <!-- Service 6 -->
+          <div
+            class="service-card card-shine group bg-navy-800/50 border border-white/5 rounded-2xl p-8 hover:border-gold-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-gold-500/5 fade-in"
+            style="transition-delay: 0.2s"
+          >
+            <div
+              class="service-icon w-14 h-14 bg-gold-500/10 rounded-xl flex items-center justify-center mb-6"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 64 64"
+                width="120"
+                height="120"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M32 52V28" />
+                <path d="M32 28C20 28 18 18 24 14C28 18 30 20 32 28Z" />
+                <path d="M32 28C44 28 46 18 40 14C36 18 34 20 32 28Z" />
+                <path d="M18 52H46" />
+              </svg>
+            </div>
+            <h3
+              class="text-xl font-display font-bold mb-3 group-hover:text-gold-500 transition"
+            >
+              Landscape Designs
+            </h3>
+            <p class="text-gray-400 leading-relaxed mb-4">
+              Our landscape design services enhance outdoor environments through
+              thoughtful planning and creative solutions. We design attractive,
+              functional, and sustainable landscapes that improve the beauty,
+              comfort, and value of residential, commercial, and public spaces.
+            </p>
+          </div>
+          <div
+            class="service-card card-shine group bg-navy-800/50 border border-white/5 rounded-2xl p-8 hover:border-gold-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-gold-500/5 fade-in"
+            style="transition-delay: 0.2s"
+          >
+            <div
+              class="service-icon w-14 h-14 bg-gold-500/10 rounded-xl flex items-center justify-center mb-6"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 64 64"
+                width="120"
+                height="120"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M14 50L32 14L50 50" />
+                <path d="M22 50V34H42V50" />
+                <path d="M26 26H38" />
+              </svg>
+            </div>
+            <h3
+              class="text-xl font-display font-bold mb-3 group-hover:text-gold-500 transition"
+            >
+              General Construction
+            </h3>
+            <p class="text-gray-400 leading-relaxed mb-4">
+              We offer comprehensive general construction services, delivering
+              high-quality workmanship across a wide range of building projects.
+              From planning to completion, we are committed to professionalism,
+              safety, efficiency, and excellence in every project we undertake.
+            </p>
+          </div>
+          <div
+            class="service-card card-shine group bg-navy-800/50 border border-white/5 rounded-2xl p-8 hover:border-gold-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-gold-500/5 fade-in"
+            style="transition-delay: 0.2s"
+          >
+            <div
+              class="service-icon w-14 h-14 bg-gold-500/10 rounded-xl flex items-center justify-center mb-6"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 64 64"
+                width="120"
+                height="120"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="14" y="14" width="36" height="36" rx="2" />
+                <path d="M50 18L56 12" />
+                <path d="M46 22L54 30" />
+                <circle cx="32" cy="32" r="8" />
+              </svg>
+            </div>
+            <h3
+              class="text-xl font-display font-bold mb-3 group-hover:text-gold-500 transition"
+            >
+              Facility Maintenance
+            </h3>
+            <p class="text-gray-400 leading-relaxed mb-4">
+              Our facility maintenance services help keep buildings and
+              infrastructure operating efficiently and safely. We provide
+              regular inspections, repairs, and maintenance solutions that
+              extend the lifespan of facilities while ensuring optimal
+              performance and reliability.
+            </p>
+          </div>
+          <div
+            class="service-card card-shine group bg-navy-800/50 border border-white/5 rounded-2xl p-8 hover:border-gold-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-gold-500/5 fade-in"
+            style="transition-delay: 0.2s"
+          >
+            <div
+              class="service-icon w-14 h-14 bg-gold-500/10 rounded-xl flex items-center justify-center mb-6"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 64 64"
+                width="120"
+                height="120"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="16" y="10" width="32" height="44" rx="2" />
+                <path d="M24 20H40M24 28H40M24 36H34" />
+                <path d="M38 44L44 50L54 38" />
+              </svg>
+            </div>
+            <h3
+              class="text-xl font-display font-bold mb-3 group-hover:text-gold-500 transition"
+            >
+              Submission Drawings
+            </h3>
+            <p class="text-gray-400 leading-relaxed mb-4">
+              We prepare professional submission drawings that meet regulatory
+              and approval requirements. Our team ensures that all drawings are
+              accurate, detailed, and compliant with local building standards,
+              helping streamline the approval and permitting process.
+            </p>
+          </div>
+          <div
+            class="service-card card-shine group bg-navy-800/50 border border-white/5 rounded-2xl p-8 hover:border-gold-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-gold-500/5 fade-in"
+            style="transition-delay: 0.2s"
+          >
+            <div
+              class="service-icon w-14 h-14 bg-gold-500/10 rounded-xl flex items-center justify-center mb-6"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 64 64"
+                width="120"
+                height="120"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 30L32 14L52 30" />
+                <path d="M18 28V52H46V28" />
+                <path d="M24 22L40 38" />
+                <path d="M40 22L24 38" />
+              </svg>
+            </div>
+            <h3
+              class="text-xl font-display font-bold mb-3 group-hover:text-gold-500 transition"
+            >
+              Home Planning
+            </h3>
+            <p class="text-gray-400 leading-relaxed mb-4">
+              We provide personalized home planning services that turn your
+              dream home into reality. From space planning to design
+              development, we focus on creating comfortable, functional, and
+              aesthetically pleasing living spaces that suit your lifestyle and
+              future needs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-navy-900 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <!-- Left -->
+          <div class="relative">
+            <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src="https://static.photos/office/640x360/77"
+                alt="Our office"
+                class="w-full h-auto object-cover"
+                loading="lazy"
+              />
+            </div>
+            <!-- Decorative element -->
+            <div
+              class="absolute -bottom-6 -right-6 w-40 h-40 bg-brand-100 rounded-2xl -z-0 hidden lg:block"
+            ></div>
+            <div
+              class="absolute -top-6 -left-6 w-24 h-24 bg-yellow-100 rounded-xl -z-0 hidden lg:block"
+            ></div>
+          </div>
+
+          <!-- Right -->
+          <div>
+            <span
+              class="text-sm font-semibold text-brand-600 uppercase tracking-widest"
+              >About Us</span
+            >
+            <h2
+              class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-3 mb-6 leading-tight"
+            >
+              Desigining your signature,
+              <span class="gradient-text">Unleashing luxury</span>
+            </h2>
+            <p class="text-gray-500 leading-relaxed mb-6">
+              We are a professional design and construction company committed to
+              delivering innovative, functional, and high-quality solutions for
+              residential, commercial, and industrial projects. With expertise
+              spanning architectural design, structural planning, construction
+              management, and facility maintenance, we provide comprehensive
+              services tailored to meet the unique needs of every client.
+            </p>
+            <p class="text-gray-500 leading-relaxed mb-8">
+              Our team combines creativity, technical excellence, and industry
+              experience to transform ideas into reality. From initial concept
+              development and home planning to detailed structural drawings and
+              full-scale construction, we ensure every project is executed with
+              precision, efficiency, and professionalism.
+            </p>
+
+            <!-- Key Points -->
+
+            <a
+              href="#contact"
+              class="inline-flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-700 transition-colors group"
+            >
+              Discover our story
+              <i
+                data-lucide="arrow-right"
+                class="w-4 h-4 transition-transform group-hover:translate-x-1"
+              ></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-24 bg-navy-900 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 fade-in">
+          <div class="flex items-center justify-center gap-2 mb-4">
+            <div class="w-8 h-[2px] bg-gold-500"></div>
+            <span
+              class="text-gold-500 font-medium text-sm tracking-widest uppercase"
+              >Expert Leadership</span
+            >
+            <div class="w-8 h-[2px] bg-gold-500"></div>
+          </div>
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-4"
+          >
+            Meet Our Team
+          </h2>
+          <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+            Industry veterans with decades of experience solving the most
+            complex business challenges across sectors.
+          </p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Team Member 1 -->
+          <div
+            class="team-card group bg-navy-800/50 border border-white/5 rounded-2xl overflow-hidden hover:border-gold-500/20 transition-all fade-in"
+          >
+            <div class="overflow-hidden h-72">
+              <img
+                src="http://static.photos/people/320x240/50"
+                alt="James Mitchell"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-lg font-display font-bold group-hover:text-gold-500 transition"
+              >
+                James Mitchell
+              </h3>
+              <p class="text-gold-500 text-sm font-medium mb-3">
+                Managing Partner
+              </p>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                25+ years in strategic consulting. Former McKinsey senior
+                partner with expertise in Fortune 500 transformations.
+              </p>
+              <div class="flex flex-wrap gap-1.5">
+                <span
+                  class="px-2.5 py-1 bg-navy-900/80 text-xs text-gray-300 rounded-full"
+                  >Strategy</span
+                >
+                <span
+                  class="px-2.5 py-1 bg-navy-900/80 text-xs text-gray-300 rounded-full"
+                  >M&A</span
+                >
+                <span
+                  class="px-2.5 py-1 bg-navy-900/80 text-xs text-gray-300 rounded-full"
+                  >Leadership</span
+                >
+              </div>
+              <div class="flex gap-3 mt-4 pt-4 border-t border-white/5">
+                <a href="#" class="text-gray-500 hover:text-gold-500 transition"
+                  ><i data-lucide="linkedin" class="w-4 h-4"></i
+                ></a>
+                <a href="#" class="text-gray-500 hover:text-gold-500 transition"
+                  ><i data-lucide="mail" class="w-4 h-4"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <!-- Team Member 2 -->
+          <div
+            class="team-card group bg-navy-800/50 border border-white/5 rounded-2xl overflow-hidden hover:border-gold-500/20 transition-all fade-in"
+            style="transition-delay: 0.1s"
+          >
+            <div class="overflow-hidden h-72">
+              <img
+                src="http://static.photos/people/320x240/51"
+                alt="Sarah Chen"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-lg font-display font-bold group-hover:text-gold-500 transition"
+              >
+                Sarah Chen
+              </h3>
+              <p class="text-gold-500 text-sm font-medium mb-3">
+                Director, Digital Strategy
+              </p>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                Former CTO at a leading fintech. Expert in AI-driven
+                transformation and enterprise technology modernization.
+              </p>
+              <div class="flex flex-wrap gap-1.5">
+                <span
+                  class="px-2.5 py-1 bg-navy-900/80 text-xs text-gray-300 rounded-full"
+                  >Digital</span
+                >
+                <span
+                  class="px-2.5 py-1 bg-navy-900/80 text-xs text-gray-300 rounded-full"
+                  >AI/ML</span
+                >
+                <span
+                  class="px-2.5 py-1 bg-navy-900/80 text-xs text-gray-300 rounded-full"
+                  >Fintech</span
+                >
+              </div>
+              <div class="flex gap-3 mt-4 pt-4 border-t border-white/5">
+                <a href="#" class="text-gray-500 hover:text-gold-500 transition"
+                  ><i data-lucide="linkedin" class="w-4 h-4"></i
+                ></a>
+                <a href="#" class="text-gray-500 hover:text-gold-500 transition"
+                  ><i data-lucide="mail" class="w-4 h-4"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <!-- Team Member 3 -->
+          <div
+            class="team-card group bg-navy-800/50 border border-white/5 rounded-2xl overflow-hidden hover:border-gold-500/20 transition-all fade-in"
+            style="transition-delay: 0.2s"
+          >
+            <div class="overflow-hidden h-72">
+              <img
+                src="http://static.photos/people/320x240/52"
+                alt="Marcus Williams"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-lg font-display font-bold group-hover:text-gold-500 transition"
+              >
+                Marcus Williams
+              </h3>
+              <p class="text-gold-500 text-sm font-medium mb-3">
+                Head, Financial Advisory
+              </p>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                Ex-Goldman Sachs VP with 20+ years in financial restructuring,
+                M&A, and capital markets advisory.
+              </p>
+              <div class="flex flex-wrap gap-1.5">
+                <span
+                  class="px-2.5 py-1 bg-navy-900/80 text-xs text-gray-300 rounded-full"
+                  >Finance</span
+                >
+                <span
+                  class="px-2.5 py-1 bg-navy-900/80 text-xs text-gray-300 rounded-full"
+                  >M&A</span
+                >
+                <span
+                  class="px-2.5 py-1 bg-navy-900/80 text-xs text-gray-300 rounded-full"
+                  >Restructuring</span
+                >
+              </div>
+              <div class="flex gap-3 mt-4 pt-4 border-t border-white/5">
+                <a href="#" class="text-gray-500 hover:text-gold-500 transition"
+                  ><i data-lucide="linkedin" class="w-4 h-4"></i
+                ></a>
+                <a href="#" class="text-gray-500 hover:text-gold-500 transition"
+                  ><i data-lucide="mail" class="w-4 h-4"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <!-- Team Member 4 -->
+          <div
+            class="team-card group bg-navy-800/50 border border-white/5 rounded-2xl overflow-hidden hover:border-gold-500/20 transition-all fade-in"
+            style="transition-delay: 0.3s"
+          >
+            <div class="overflow-hidden h-72">
+              <img
+                src="http://static.photos/people/320x240/53"
+                alt="Elena Rodriguez"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-lg font-display font-bold group-hover:text-gold-500 transition"
+              >
+                Elena Rodriguez
+              </h3>
+              <p class="text-gold-500 text-sm font-medium mb-3">
+                Director, Organizational Strategy
+              </p>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                Harvard MBA with deep expertise in culture transformation,
+                talent strategy, and change management.
+              </p>
+              <div class="flex flex-wrap gap-1.5">
+                <span
+                  class="px-2.5 py-1 bg-navy-900/80 text-xs text-gray-300 rounded-full"
+                  >Culture</span
+                >
+                <span
+                  class="px-2.5 py-1 bg-navy-900/80 text-xs text-gray-300 rounded-full"
+                  >Talent</span
+                >
+                <span
+                  class="px-2.5 py-1 bg-navy-900/80 text-xs text-gray-300 rounded-full"
+                  >Change Mgmt</span
+                >
+              </div>
+              <div class="flex gap-3 mt-4 pt-4 border-t border-white/5">
+                <a href="#" class="text-gray-500 hover:text-gold-500 transition"
+                  ><i data-lucide="linkedin" class="w-4 h-4"></i
+                ></a>
+                <a href="#" class="text-gray-500 hover:text-gold-500 transition"
+                  ><i data-lucide="mail" class="w-4 h-4"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section
+      id="testimonials"
+      class="py-24 bg-navy-950 relative overflow-hidden"
+    >
+      <div
+        class="absolute top-0 left-0 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl -translate-x-1/2"
+      ></div>
+      <div
+        class="absolute bottom-0 right-0 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl translate-x-1/2"
+      ></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="text-center mb-16 fade-in">
+          <div class="flex items-center justify-center gap-2 mb-4">
+            <div class="w-8 h-[2px] bg-gold-500"></div>
+            <span
+              class="text-gold-500 font-medium text-sm tracking-widest uppercase"
+              >Client Voices</span
+            >
+            <div class="w-8 h-[2px] bg-gold-500"></div>
+          </div>
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-4"
+          >
+            WHY CHOOSE US?
+          </h2>
+          <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+            We don't just deliver results—we create lasting partnerships built
+            on trust, transparency, and transformative impact. Our clients
+            choose us because we are relentlessly focused on their success and
+            committed to exceeding expectations at every turn.
+          </p>
+        </div>
+        <div class="relative">
+          <div id="testimonialContainer" class="overflow-hidden">
+            <div
+              id="testimonialTrack"
+              class="flex transition-transform duration-500 ease-out"
+            >
+              <!-- Testimonial 1 -->
+              <div class="w-full flex-shrink-0 px-4">
+                <div class="max-w-3xl mx-auto text-center">
+                  <div class="flex justify-center mb-6">
+                    <i
+                      data-lucide="quote"
+                      class="w-12 h-12 text-gold-500/30"
+                    ></i>
+                  </div>
+                  <p
+                    class="text-xl sm:text-2xl text-gray-200 leading-relaxed mb-8 font-display italic"
+                  >
+                    Expert Craftsmanship
+                  </p>
+                </div>
+              </div>
+              <div class="w-full flex-shrink-0 px-4">
+                <div class="max-w-3xl mx-auto text-center">
+                  <div class="flex justify-center mb-6">
+                    <i
+                      data-lucide="quote"
+                      class="w-12 h-12 text-gold-500/30"
+                    ></i>
+                  </div>
+                  <p
+                    class="text-xl sm:text-2xl text-gray-200 leading-relaxed mb-8 font-display italic"
+                  >
+                    Years of Experience
+                  </p>
+                </div>
+              </div>
+              <div class="w-full flex-shrink-0 px-4">
+                <div class="max-w-3xl mx-auto text-center">
+                  <div class="flex justify-center mb-6">
+                    <i
+                      data-lucide="quote"
+                      class="w-12 h-12 text-gold-500/30"
+                    ></i>
+                  </div>
+                  <p
+                    class="text-xl sm:text-2xl text-gray-200 leading-relaxed mb-8 font-display italic"
+                  >
+                    Competitive pricing
+                  </p>
+                </div>
+              </div>
+              <div class="w-full flex-shrink-0 px-4">
+                <div class="max-w-3xl mx-auto text-center">
+                  <div class="flex justify-center mb-6">
+                    <i
+                      data-lucide="quote"
+                      class="w-12 h-12 text-gold-500/30"
+                    ></i>
+                  </div>
+                  <p
+                    class="text-xl sm:text-2xl text-gray-200 leading-relaxed mb-8 font-display italic"
+                  >
+                    Innovative Solutions
+                  </p>
+                </div>
+              </div>
+              <div class="w-full flex-shrink-0 px-4">
+                <div class="max-w-3xl mx-auto text-center">
+                  <div class="flex justify-center mb-6">
+                    <i
+                      data-lucide="quote"
+                      class="w-12 h-12 text-gold-500/30"
+                    ></i>
+                  </div>
+                  <p
+                    class="text-xl sm:text-2xl text-gray-200 leading-relaxed mb-8 font-display italic"
+                  >
+                    Customer Satisfaction
+                  </p>
+                </div>
+              </div>
+              <div class="w-full flex-shrink-0 px-4">
+                <div class="max-w-3xl mx-auto text-center">
+                  <div class="flex justify-center mb-6">
+                    <i
+                      data-lucide="quote"
+                      class="w-12 h-12 text-gold-500/30"
+                    ></i>
+                  </div>
+                  <p
+                    class="text-xl sm:text-2xl text-gray-200 leading-relaxed mb-8 font-display italic"
+                  >
+                    One-Time Completion
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Controls -->
+          <div class="flex items-center justify-center gap-4 mt-10">
+            <button
+              id="prevBtn"
+              class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:border-gold-500 hover:text-gold-500 transition text-white"
+            >
+              <i data-lucide="chevron-left" class="w-5 h-5"></i>
+            </button>
+            <div id="dots" class="flex gap-2">
+              <button
+                class="dot w-3 h-3 rounded-full bg-gold-500 transition"
+                data-index="0"
+              ></button>
+              <button
+                class="dot w-3 h-3 rounded-full bg-white/20 transition"
+                data-index="1"
+              ></button>
+              <button
+                class="dot w-3 h-3 rounded-full bg-white/20 transition"
+                data-index="2"
+              ></button>
+              <button
+                class="dot w-3 h-3 rounded-full bg-white/20 transition"
+                data-index="3"
+              ></button>
+            </div>
+            <button
+              id="nextBtn"
+              class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:border-gold-500 hover:text-gold-500 transition text-white"
+            >
+              <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="booking" class="py-24 bg-navy-900 relative">
+      <div
+        class="absolute inset-0 opacity-[0.02]"
+        style="
+          background-image: radial-gradient(
+            circle,
+            #ffffff 1px,
+            transparent 1px
+          );
+          background-size: 30px 30px;
+        "
+      ></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+          <div class="fade-in">
+            <div class="flex items-center gap-2 mb-4">
+              <div class="w-8 h-[2px] bg-gold-500"></div>
+              <span
+                class="text-gold-500 font-medium text-sm tracking-widest uppercase"
+                >Get Started</span
+              >
+            </div>
+            <h2
+              class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-6"
+            >
+              Book Your Free Consultation
+            </h2>
+            <p class="text-gray-400 text-lg leading-relaxed mb-8">
+              Take the first step toward transforming your business. Our expert
+              consultants will assess your challenges and outline a clear path
+              forward—at no cost.
+            </p>
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 bg-gold-500/10 rounded-xl flex items-center justify-center flex-shrink-0"
+                >
+                  <i data-lucide="clock" class="w-6 h-6 text-gold-500"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-1">30-Minute Discovery Call</h4>
+                  <p class="text-gray-400 text-sm">
+                    Understand your challenges and identify quick wins
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 bg-gold-500/10 rounded-xl flex items-center justify-center flex-shrink-0"
+                >
+                  <i data-lucide="file-text" class="w-6 h-6 text-gold-500"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-1">Custom Strategy Brief</h4>
+                  <p class="text-gray-400 text-sm">
+                    Receive a personalized roadmap tailored to your goals
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 bg-gold-500/10 rounded-xl flex items-center justify-center flex-shrink-0"
+                >
+                  <i
+                    data-lucide="shield-check"
+                    class="w-6 h-6 text-gold-500"
+                  ></i>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-1">No Obligation</h4>
+                  <p class="text-gray-400 text-sm">
+                    Completely free with zero commitment required
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fade-in" style="transition-delay: 0.2s">
+            <form
+              id="bookingForm"
+              class="bg-navy-800/50 border border-white/5 rounded-2xl p-8"
+            >
+              <div class="grid sm:grid-cols-2 gap-5 mb-5">
+                <div>
+                  <label class="block text-sm font-medium text-gray-300 mb-2"
+                    >First Name *</label
+                  >
+                  <input
+                    type="text"
+                    required
+                    class="w-full bg-navy-900/80 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-gold-500 transition"
+                    placeholder="John"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-300 mb-2"
+                    >Last Name *</label
+                  >
+                  <input
+                    type="text"
+                    required
+                    class="w-full bg-navy-900/80 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-gold-500 transition"
+                    placeholder="Doe"
+                  />
+                </div>
+              </div>
+              <div class="mb-5">
+                <label class="block text-sm font-medium text-gray-300 mb-2"
+                  >Email *</label
+                >
+                <input
+                  type="email"
+                  required
+                  class="w-full bg-navy-900/80 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-gold-500 transition"
+                  placeholder="john@company.com"
+                />
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-5 mb-5">
+                <div>
+                  <label class="block text-sm font-medium text-gray-300 mb-2"
+                    >Service Interest *</label
+                  >
+                  <select
+                    required
+                    class="w-full bg-navy-900/80 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 transition appearance-none"
+                  >
+                    <option value="" disabled selected>Select service</option>
+                    <option>Schematic Design Development</option>
+                    <option>Construction Administration</option>
+                    <option>Construction Estimation</option>
+                    <option>Structural Drawings</option>
+                    <option>Architectural Designs</option>
+                    <option>Landscape Designs</option>
+                    <option>General Construction</option>
+                    <option>Facility Maintenance</option>
+                    <option>Submission Drawings</option>
+                    <option>Home Planning</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-300 mb-2"
+                    >Preferred Date *</label
+                  >
+                  <input
+                    type="date"
+                    required
+                    class="w-full bg-navy-900/80 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 transition"
+                  />
+                </div>
+              </div>
+              <div class="mb-6">
+                <label class="block text-sm font-medium text-gray-300 mb-2"
+                  >Message</label
+                >
+                <textarea
+                  rows="4"
+                  class="w-full bg-navy-900/80 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-gold-500 transition resize-none"
+                  placeholder="Describe your current business challenge..."
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full py-4 bg-gold-500 text-navy-950 font-bold rounded-lg hover:bg-gold-400 transition text-lg"
+              >
+                Send
+              </button>
+              <p class="text-center text-xs text-gray-500 mt-4">
+                By submitting, you agree to our Privacy Policy. We'll never
+                share your information.
+              </p>
+            </form>
+            <!-- Success Message -->
+            <div
+              id="formSuccess"
+              class="hidden bg-navy-800/50 border border-green-500/30 rounded-2xl p-8 text-center"
+            >
+              <div
+                class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i
+                  data-lucide="check-circle"
+                  class="w-8 h-8 text-green-400"
+                ></i>
+              </div>
+              <h3 class="text-2xl font-display font-bold mb-2">
+                Consultation Booked!
+              </h3>
+              <p class="text-gray-400">
+                Thank you! Our team will reach out within 24 hours to confirm
+                your consultation details.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog / Resources Section -->
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <div
+                class="w-10 h-10 gold-gradient rounded-lg flex items-center justify-center"
+              >
+                <i data-lucide="triangle" class="w-5 h-5 text-navy-950"></i>
+              </div>
+              <span class="text-xl font-display font-bold"
+                >Deluxe Domicile<span class="text-gold-500">
+                  Designs</span
+                ></span
+              >
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              Transforming vision into results. We partner with ambitious
+              organizations to build sustainable competitive advantages.
+            </p>
+            <div class="flex gap-3">
+              <a
+                href="#"
+                class="w-10 h-10 bg-navy-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-gold-500 hover:text-navy-950 transition"
+              >
+                <i data-lucide="linkedin" class="w-4 h-4"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-navy-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-gold-500 hover:text-navy-950 transition"
+              >
+                <i data-lucide="twitter" class="w-4 h-4"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-navy-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-gold-500 hover:text-navy-950 transition"
+              >
+                <i data-lucide="facebook" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-bold mb-6 text-white">Services</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#services"
+                  class="text-sm text-gray-400 hover:text-gold-500 transition"
+                  >Schematic Design Development</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-sm text-gray-400 hover:text-gold-500 transition"
+                  >Construction Administration</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-sm text-gray-400 hover:text-gold-500 transition"
+                  >Construction Estimation</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-sm text-gray-400 hover:text-gold-500 transition"
+                  >Structural Drawings</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-sm text-gray-400 hover:text-gold-500 transition"
+                  >Architectural Designs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-sm text-gray-400 hover:text-gold-500 transition"
+                  >Landscape Designs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-sm text-gray-400 hover:text-gold-500 transition"
+                  >General Construction</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-sm text-gray-400 hover:text-gold-500 transition"
+                  >Facility Maintenance</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-sm text-gray-400 hover:text-gold-500 transition"
+                  >Submission Drawings</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-sm text-gray-400 hover:text-gold-500 transition"
+                  >Home Planning
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-6 text-white">Company</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#about"
+                  class="text-sm text-gray-400 hover:text-gold-500 transition"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#team"
+                  class="text-sm text-gray-400 hover:text-gold-500 transition"
+                  >Our Team</a
+                >
+              </li>
+
+              <li>
+                <a
+                  href="#"
+                  class="text-sm text-gray-400 hover:text-gold-500 transition"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-6 text-white">Contact</h4>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <i
+                  data-lucide="map-pin"
+                  class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"
+                ></i>
+                <span class="text-sm text-gray-400"><br />Takoradi, W/R.</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i
+                  data-lucide="phone"
+                  class="w-4 h-4 text-gold-500 flex-shrink-0"
+                ></i>
+                <span class="text-sm text-gray-400">+(233) 55-127-9918</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i
+                  data-lucide="mail"
+                  class="w-4 h-4 text-gold-500 flex-shrink-0"
+                ></i>
+                <span class="text-sm text-gray-400">gideonadjivonmail.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/5 py-6">
+        <div
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          <p class="text-sm text-gray-500">
+            © 2024 Deluxe Domicile Designs. All rights reserved.
+          </p>
+          <div class="flex gap-6">
+            <a
+              href="#"
+              class="text-sm text-gray-500 hover:text-gold-500 transition"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              class="text-sm text-gray-500 hover:text-gold-500 transition"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              class="text-sm text-gray-500 hover:text-gold-500 transition"
+              >Cookie Settings</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      class="fixed bottom-6 right-6 w-12 h-12 bg-gold-500 text-navy-950 rounded-full shadow-lg hidden items-center justify-center hover:bg-gold-400 transition z-40"
+    >
+      <i data-lucide="chevron-up" class="w-5 h-5"></i>
+    </button>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+
+      // ===== NAVBAR SCROLL EFFECT =====
+      const navbar = document.getElementById("navbar");
+      let lastScroll = 0;
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.scrollY;
+        if (currentScroll > 80) {
+          navbar.classList.add(
+            "bg-navy-950/95",
+            "backdrop-blur-lg",
+            "shadow-lg",
+            "shadow-black/20",
+          );
+        } else {
+          navbar.classList.remove(
+            "bg-navy-950/95",
+            "backdrop-blur-lg",
+            "shadow-lg",
+            "shadow-black/20",
+          );
+        }
+        lastScroll = currentScroll;
+      });
+
+      // ===== MOBILE MENU =====
+      const menuBtn = document.getElementById("menuBtn");
+      const closeMenu = document.getElementById("closeMenu");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+
+      menuBtn.addEventListener("click", () => mobileMenu.classList.add("open"));
+      closeMenu.addEventListener("click", () =>
+        mobileMenu.classList.remove("open"),
+      );
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () =>
+          mobileMenu.classList.remove("open"),
+        );
+      });
+
+      // ===== TESTIMONIAL CAROUSEL =====
+      const track = document.getElementById("testimonialTrack");
+      const dots = document.querySelectorAll(".dot");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      let currentSlide = 0;
+      const totalSlides = 6;
+      let autoplayInterval;
+
+      function goToSlide(index) {
+        currentSlide = index;
+        if (currentSlide < 0) currentSlide = totalSlides - 1;
+        if (currentSlide >= totalSlides) currentSlide = 0;
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        dots.forEach((dot, i) => {
+          dot.classList.toggle("bg-gold-500", i === currentSlide);
+          dot.classList.toggle("bg-white/20", i !== currentSlide);
+        });
+      }
+
+      prevBtn.addEventListener("click", () => {
+        goToSlide(currentSlide - 1);
+        resetAutoplay();
+      });
+      nextBtn.addEventListener("click", () => {
+        goToSlide(currentSlide + 1);
+        resetAutoplay();
+      });
+      dots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          goToSlide(parseInt(dot.dataset.index));
+          resetAutoplay();
+        });
+      });
+
+      function startAutoplay() {
+        autoplayInterval = setInterval(() => goToSlide(currentSlide + 1), 5000);
+      }
+      function resetAutoplay() {
+        clearInterval(autoplayInterval);
+        startAutoplay();
+      }
+      startAutoplay();
+
+      // Touch/Swipe support
+      let touchStartX = 0;
+      let touchEndX = 0;
+      const container = document.getElementById("testimonialContainer");
+      container.addEventListener(
+        "touchstart",
+        (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+        },
+        { passive: true },
+      );
+      container.addEventListener(
+        "touchend",
+        (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          const diff = touchStartX - touchEndX;
+          if (Math.abs(diff) > 50) {
+            if (diff > 0) goToSlide(currentSlide + 1);
+            else goToSlide(currentSlide - 1);
+            resetAutoplay();
+          }
+        },
+        { passive: true },
+      );
+
+      // ===== FORM SUBMISSIONS =====
+      document.getElementById("bookingForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        document.getElementById("bookingForm").classList.add("hidden");
+        document.getElementById("formSuccess").classList.remove("hidden");
+        lucide.createIcons();
+      });
+
+      // ===== SCROLL ANIMATIONS =====
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document
+        .querySelectorAll(".fade-in")
+        .forEach((el) => observer.observe(el));
+
+      // ===== BACK TO TOP =====
+      const backToTop = document.getElementById("backToTop");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 600) {
+          backToTop.classList.remove("hidden");
+          backToTop.classList.add("flex");
+        } else {
+          backToTop.classList.add("hidden");
+          backToTop.classList.remove("flex");
+        }
+      });
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // ===== COUNTER ANIMATION =====
+      function animateCounters() {
+        const counters = document.querySelectorAll("[data-count]");
+        counters.forEach((counter) => {
+          const target = parseInt(counter.dataset.count);
+          let current = 0;
+          const increment = target / 60;
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              counter.textContent = target + "+";
+              clearInterval(timer);
+            } else {
+              counter.textContent = Math.floor(current) + "+";
+            }
+          }, 30);
+        });
+      }
+
+      const heroObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          animateCounters();
+          heroObserver.disconnect();
+        }
+      });
+      heroObserver.observe(document.querySelector(".hero-gradient"));
+    </script>
+  </body>
+</html>
